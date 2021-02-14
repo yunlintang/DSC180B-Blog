@@ -2,7 +2,7 @@
     <ul class="navbar-nav ms-auto">
         {% for item in site.data.navigation %}
             <li class="nav-item">
-                <a href="{{ item.link }}" class="nav-link pe-4 fs-5">{{ item.name }}</a>
+                <a href="{{ item.link | relative_url }}" class="nav-link pe-4 fs-5">{{ item.name }}</a>
             </li>
         {% endfor %}
     </ul>
