@@ -3,13 +3,15 @@ layout: default
 title: "COVID-19 Sentiment Analysis on Social Media"
 ---
 
-Data Science capstone project, DSC180AB B02
+## COVID-19 Sentiment Analysis on Social Media
+
+Data Science Capstone Project - DSC180AB B02
 
 Developed by Yunlin Tang, Jiawei Zheng, Zhou Li
 
 ---
 
-# Introduction
+### Introduction
 
 Covid-19 changed everyone, from the way we interact, to how we work, and our methods of communication, especially through social media. During this pandemic period, social media becomes a huge and important part of people’s daily lives. It provides mobile users a convenient way to connect to each other around the world and acquire updated and trending information about the topic of covid-19. Besides, people can also express their thoughts and feelings toward certain topics by posting on social media. Throughout the studying of this quarter, we noticed that there are numbers of posts in our Twitter dataset that are related to the topic of covid-19 having some strong emotions and sentiments. In the meantime, a previous study[1] has shown that more people are experiencing negative emotions such as anxiety and panic under this pandemic period. Therefore, we are interested in analyzing the posts that are related to the topic of covid-19 on social media and investigating the emotions of the results implied in these posts will lead to. 
 
@@ -17,9 +19,9 @@ We start our investigation using the “covid-19 tweets” dataset obtained from
 
 ---
 
-# Datasets
+### Datasets
 
-### Data Collection
+##### Data Collection
 
 There are three datasets obtained for this project. First, we used the dataset which includes the daily Tweets IDs which can regenerate tweets about the covid-19 from March 22 to November 30 (inclusive) in the year 2020, collected by the [Panacea Lab at Georgia State](https://github.com/thepanacealab/covid19_twitter). Then we sampled at a rate of one out of 360 tweet IDs per day for convenience purposes. On this subsampled dataset, we performed the Twitter collection process by using the Twitter API function “twarc” to rehydrate which requests the full tweet content based on the tweet IDs, and then got all the tweets about the covid-19. 
 
@@ -27,7 +29,8 @@ After obtaining all the tweets about covid-19 in the subsampled dataset, a train
 
 In order to observe and determine the significant correlation between the sentiment in the  covid-19 related social media posts and the numbers of disease daily cases, we obtained a  dataset which contains daily new positive cases and death cases all over the world, which is from [Our World in Data](https://github.com/owid/covid-19-data/tree/master/public/data)[4]. 
 
-### Data Processing and Cleaning
+
+##### Data Processing and Cleaning
 
 In the tweets content dataset which is about covid-19, we extracted “tweet_id”, “text”, “location”, “retweeted status”, “hashtag”, “follower_count”, “date”, “language” and “text” from the raw dataset, and we also adjusted all columns to a suitable format and saved them as csv files. In addition, in order to have a cleaner version of the tweet text, we have converted all the text into lowercase and removed all the punctuations, stopwords, and usernames contained in the tweets. 
 
@@ -36,9 +39,9 @@ in the COVID-19 daily cases dataset, since it is relatively difficult to specify
 
 ---
 
-# Data Analysis
+### Data Analysis
 
-### Text Analysis
+##### Text Analysis
 
 After cleaning the text in the Twitter dataset, we have performed an exploratory data analysis on it. By calculating the term frequency and Tf-Idf throughout these Twitter posts, the tables of frequencies were acquired respectively. We noticed that these two vectorizers gave out similar results; for example, the three most frequent terms in both tables are “covid19”, “coronavirus”, and “trump”. In order to visually compare the results, a graph of the word cloud for both vectorizers was generated as shown in Figures 1 and 2 below.
 
@@ -46,23 +49,23 @@ To compare the daily term frequencies and the counts of daily covid-19 cases, we
 
 ---
 
-# Methodology
+### Methodology
 
-### CountVectorizer and SVC
+##### CountVectorizer and SVC
 
 First, we used the sklearn function “countvectorizer” to convert text to a vector of tokens, which can help us to use the resulting matrix as input to put it into the model. Then, we trained an SVC model to predict the sentiment of tweet contents, and select the  “c” value as 0.01.  Finally, we got an accuracy of 0.53. 
 
-### BERT Tokenizer & Logistic Regression
+##### BERT Tokenizer & Logistic Regression
 
 Besides using the SVC model, we are also going to use BERT tokenizer and logistic regression to predict the sentiment of the text in the covid-19 tweets dataset[1]. By importing the transformers package, we used the “tokenizer” function to convert the text to arrays of numbers and then pad different arrays to the max length and convert it to the parse matrix. Then, we built the logistic regression model to predict the sentiment of the text. Finally, we got an accuracy of 0.56. 
 
-### NLTK Vader
+##### NLTK Vader
 
 To explore the sentiment with a more comprehensive perspective, we fitted Vader in the nltk module to the dataset. It does not require us to tokenize the sentences since it automatically recognized words within its dictionary. The efficiency allows us to obtain a compound score that shows the comprehensive sentiment of the sentence tweet in this scenario.
 
 With the score plotted, we can see that there exists fluctuation in the sentiment between days but most of the time the score stays below 0 which suggests that the overall mood of the COVID-19 tweets is negative. 
 
-### Modeling Seasonality in Daily New Cases and Daily Tweet Sentiment (from Vader)
+##### Modeling Seasonality in Daily New Cases and Daily Tweet Sentiment (from Vader)
 
 Our first step is to detrend the daily new case data. As we can see in the graph, daily cases are climbing every data which are the result of multiple factors such as exponential transmitting rate and state policy. Our sentiment score does not have a trend in the long run. However, both of the data have a seasonality component which could be correlated. To detrend the data, we used the seasonal decompose module to locate the trends and use a regression of order 3 to compose the shape of the curve. We then subtracted the composition from the original data to obtain a flat version of daily cases with only the seasonality. By plotting the sentiment data with the detrended data we can see that they do have similar fluctuations before 2020/10/18, the crest and trough of the data roughly align with one another. One possible reason for the irregularities in later periods is that our detrended cases daily did not take into account how the trend affected the magnitude of the fluctuations. With the increase in cases per day, the fluctuation number also increases.
 
@@ -74,7 +77,7 @@ A remedy for the problem above is the LSTM model. The Long Short Term Neural Net
 
 ---
 
-# Reference
+### Reference
 
 - Koyel Chakraborty, Surbhi Bhatia, Siddhartha Bhattacharyya, Jan Platos, Rajib Bag, Aboul Ella Hassanien, Sentiment Analysis of COVID-19 tweets by Deep Learning Classifiers—A study to show how popularity is affecting accuracy in social media, Applied Soft Computing, Volume 97, Part A, 2020, 106754, ISSN 1568-4946, https://doi.org/10.1016/j.asoc.2020.106754.
 
