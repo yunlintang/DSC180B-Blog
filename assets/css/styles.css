@@ -30,14 +30,18 @@ table {
 }
 
 th, td{
-    border:1px solid #000000;
-    font-weight: normal;
+    border:1px solid #d3d8dd;
     word-wrap: break-word;
-    text-align: center;
+    text-align: left;
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 4px;
     padding-bottom: 4px;
+}
+
+th {
+    background-color: #dee2e6;
+    color: #40403f;
 }
 
 .wcimg {
