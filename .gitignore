@@ -1,17 +1,5 @@
-_site/
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
 _site
-*.class
-~*
-*.swp
-*.bak
-# Jekyll
-.bundle
-.jekyll-cache/
+.sass-cache
+.jekyll-cache
 .jekyll-metadata
-.sass-cache/
-_site/
-Gemfile.lock
-vendor/
+vendor

@@ -26,7 +26,9 @@ table {
     table-layout: fixed;
     margin-left: auto;
     margin-right: auto;
-    width: 650px;
+    max-width: 650px;
+    width: 100%;
+    margin: 0px auto;
 }
 
 th, td{
@@ -46,7 +48,23 @@ th {
 
 .wcimg {
     display: block;
-    max-width: 750px;
+    max-width: 500px;
+    max-height: 300px;
+    width: 100%;
+    margin: 0px auto;
+}
+
+.plotimg {
+    display: block;
+    max-width: 700px;
+    max-height: 350px;
+    width: 100%;
+    margin: 0px auto;
+}
+
+.plotimg2 {
+    display: block;
+    max-width: 800px;
     max-height: 500px;
     width: 100%;
     margin: 0px auto;
@@ -55,4 +73,19 @@ th {
 .caption {
     text-align: center;
     font-style: italic;
+}
+
+.imgtable {
+    max-width: 700px;
+    width: 100%;
+    margin: 0px auto;
+    border: none;
+}
+
+.imgtable2 {
+    max-width: 1000px;
+    max-height: 800px;
+    width: 100%;
+    margin: 0px auto;
+    border: none;
 }
