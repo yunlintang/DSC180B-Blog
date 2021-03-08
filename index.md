@@ -107,7 +107,12 @@ Although the accuracy of the baseline logistic regression model is acceptable, i
 
 ##### Analyzing Seasonality in Daily New Cases and Daily Tweet Sentiment
 
-Our first step is to detrend the daily new case data. As we can see in the graph, daily cases data has an upward mobility which is the result of multiple factors such as exponential transmitting rate and state policy. Our sentiment score does not have a trend in the long run. However, both of the data have a seasonality component which could be correlated. To detrend the data, we used the seasonal decompose module to locate the trends and use a regression of order 3 to compose the shape of the curve. We then subtracted the composition from the original data to obtain a flat version of daily cases with only the seasonality. By plotting the sentiment data with the detrended data we can see that they do have similar fluctuations in the previous three months, the crest and trough of the data roughly align with one another. One possible reason for the irregularities in later periods is that our detrended cases daily did not take into account how the upward trend affect the magnitude of the fluctuations. With the increase in cases per day, the fluctuation number also increases.  
+Our first step is to detrend the daily new case data. As we can see in the graph, daily cases data has an upward mobility which is the result of multiple factors such as exponential transmitting rate and state policy. Our sentiment score does not have a trend in the long run. However, both of the data have a seasonality component which could be correlated. To detrend the data, we used the seasonal decompose module to locate the trends and use a regression of order 3 to compose the shape of the curve. We then subtracted the composition from the original data to obtain a flat version of daily cases with only the seasonality. 
+<br/>
+![Daily Cases Plot](assets/images/detrended_cases.png){:.plotimg2}
+<p class="caption">Figure 7: Daily Cases with Detrended Daily Cases</p>
+
+By plotting the sentiment data with the detrended data we can see that they do have similar fluctuations in the previous three months, the crest and trough of the data roughly align with one another. One possible reason for the irregularities in later periods is that our detrended cases daily did not take into account how the upward trend affect the magnitude of the fluctuations. With the increase in cases per day, the fluctuation number also increases.  
 <br/>
 ![detrended Plot](assets/images/detrended.png){:.plotimg2}
 <p class="caption">Figure 8: Sentiment Score VS. Detrended Daily Cases</p>
