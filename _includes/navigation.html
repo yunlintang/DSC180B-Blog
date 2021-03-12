@@ -1,9 +1,15 @@
-<nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
-    <ul class="navbar-nav ms-auto">
-        {% for item in site.data.navigation %}
-            <li class="nav-item">
-                <a href="{{ item.link | relative_url }}" class="nav-link pe-4 fs-5">{{ item.name }}</a>
-            </li>
-        {% endfor %}
-    </ul>
+<nav class="navbar navbar-expand fixed-top navbar-dark bg-dark">
+
+    <div class="container-fluid">
+        <ul class="navbar-nav">
+            <a class ="navbar-brand" href="index.html">DSC180B</a>
+            {% for item in site.data.navigation %}
+                <li class="nav-item">
+                    <a href="{{ item.link | relative_url }}" class="nav-link">{{ item.name }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+
 </nav>

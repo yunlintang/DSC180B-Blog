@@ -3,8 +3,29 @@ body {
 }
 
 .container {
-    width: 65%;
     text-align: justify;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+#icon {
+    max-height: 20px;
+}
+
+#github {
+    color: white;
+    text-decoration: none;
+}
+
+#github:hover{
+    color:#a6a6a6;
+    text-decoration: none;
 }
 
 h3, h2 {
