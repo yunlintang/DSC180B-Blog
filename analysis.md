@@ -49,6 +49,12 @@ In the trained sentiment dataset, we only extracted “text” and “sentiment�
 
 ### Data Analysis
 
+Before we start to talk about the analysis step, let me introduce some terms used in this section:
+
+- CountVectorizer: it is used to convert a collection of text documents to a vector of term counts. It transforms the cleaned text data into its vector representation. In this way, text data can be used as features for our prediction model. As illustrated in the below figure, a list of terms is converted to a vector of features by using the CountVectorizer.
+![CountVectorizer](assets/images/cnt.png){:.wcimg}
+- TfidfVectorizer: Similar to CountVectorizer, but it uses different way to calculate the vectors of text data. Tf-Idf stands for "term frequency - inverse document frequency".
+
 ##### Text Analysis
 
 After cleaning the text in the Twitter dataset, we have performed an exploratory data analysis on it. By calculating the term frequency and Tf-Idf throughout these Twitter posts, the tables of frequencies were acquired respectively. We noticed that these two vectorizers gave out similar results; for example, the three most frequent terms in both tables are “covid19”, “coronavirus”, and “trump”. In order to visually compare the results, a graph of the word cloud for both vectorizers was generated as shown in Figures 1 and 2 below.

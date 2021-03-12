@@ -3,14 +3,6 @@ layout: default
 title: "COVID-19 Sentiment Analysis on Social Media"
 ---
 
-### Authors
-
-- Jiawei Zheng
-- Zhou Li
-- Yunlin Tang
-
----
-
 ### Appendix
 
 - <a href="https://github.com/yunlintang/DSC180B-Project" target="_blank">GitHub for Project Code</a>

@@ -5,9 +5,11 @@ title: "COVID-19 Sentiment Analysis on Social Media"
 
 ### Methodology and Results
 
+In this section, we will talk about how we use the pre-labeled dataset to train the models in order to label our tweet-content dataset. After labeling all the tweet contents, we use some time-series methods to analyze the relationship between the Covid-19 daily cases and the daily average sentiment score.
+
 ##### Baseline Model: BERT Tokenizer & Logistic regression
 
-Before building models, we need to tokenize all text data into smaller units, so we are going to use BERT tokenizer to convert the whole text into numerical arrays.[1] By importing the transformers package, we used the “tokenizer” function to convert the text to arrays of numbers and then pad different arrays to the max length and convert it to the parse matrix. Then, we decided to use the logistic regression model as our baseline model to predict the sentiment of the
+Before building models, we need to tokenize all text data into smaller units, so we are going to use BERT tokenizer to convert the whole text into numerical arrays. By importing the transformers package, we used the “tokenizer” function to convert the text to arrays of numbers and then pad different arrays to the max length and convert it to the parse matrix. Then, we decided to use the logistic regression model as our baseline model to predict the sentiment of the
 text in the covid-19 tweets dataset, and we firstly got a base accuracy of 0.53, which is well-grounded.
 
 ##### Advanced Model: CountVectorizer and SVC
