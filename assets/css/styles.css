@@ -6,7 +6,7 @@ body {
     text-align: justify;
 }
 
-.footer {
+.githubfooter {
     position: fixed;
     left: 0;
     bottom: 0;
@@ -14,16 +14,16 @@ body {
     text-align: center;
 }
 
-#icon {
+.icon {
     max-height: 20px;
 }
 
-#github {
+.github {
     color: white;
     text-decoration: none;
 }
 
-#github:hover{
+.github:hover{
     color:#a6a6a6;
     text-decoration: none;
 }
